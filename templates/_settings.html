@@ -1,0 +1,11 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+	first:        true,
+	label:        "Section ID"|t,
+	id:           'section',
+	name:         'section',
+	value:        settings.section,
+	autofocus:    true,
+	errors:       settings.getErrors('section')
+}) }}
