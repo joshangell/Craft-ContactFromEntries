@@ -1,11 +1,23 @@
 {% import "_includes/forms" as forms %}
 
-{{ forms.textField({
-	first:        true,
-	label:        "Section ID"|t,
-	id:           'section',
-	name:         'section',
-	value:        settings.section,
-	autofocus:    true,
-	errors:       settings.getErrors('section')
+{% set sections = craft.sections.getEditableSections() %}
+
+{% set sectionOptions = [] %}
+
+{% for section in sections %}
+  {% set sectionOptions = sectionOptions|merge([{
+    label : section.name,
+    value : section.id
+  }]) %}
+{% endfor %}
+
+{{ forms.selectField({
+  first:        true,
+  label:        "Section"|t,
+  id:           'section',
+  name:         'section',
+  value:        settings.section,
+  autofocus:    true,
+  errors:       settings.getErrors('section'),
+  options: sectionOptions
 }) }}
