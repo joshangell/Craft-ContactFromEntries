@@ -10,3 +10,9 @@ The following entry fields will recieve the corresponding email fields:
 * body => message
 * fromEmail => fromName
 * fromEmail => fromEmail
+
+To do
+-----
+
+* Make submissions post to their own element type so they aren't in the normal set of sections
+* Output these in a cp tab
