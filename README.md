@@ -1,3 +1,7 @@
+# DEPRECATED
+
+---
+
 Craft-ContactFromEntries
 ========================
 
